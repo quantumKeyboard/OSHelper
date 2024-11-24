@@ -349,12 +349,21 @@ else
     echo "Number is zero"
 fi
 
-# Save as if_example.sh
+# Steps to run 
+# Follow this if told to write code using vi editor:
+# Step 0: Copy the code in the answer
+# Step 1: Open a new Terminal and type: vi if_example.sh
+# Step 2: Press i key on the keyboard and press Ctrl+shift+v
+# Step 3: The code should be pasted, now press Esc key on keyboard
+# Step 4: Type: :wq and press Enter key on the keyboard
+# Jump to Step 4 below
+
+# Save file as if_example.sh
+# Follow this if vi editor is not mentioned
 # Step 1: Copy this code
 # Step 2: Open new terminal, Enter on terminal: cat > if_example.sh
 # Step 3: Paste the copied code and press Ctrl+d to exit.
 # Step 4: type the following to run the code: bash if_example.sh
-# Run: bash if_example.sh
 EOF
             ;;
         10)
@@ -375,12 +384,20 @@ do
     echo "Found file: $file"
 done
 
+# Steps to run 
+# Follow this if told to write code using vi editor:
+# Step 0: Copy the code in the answer
+# Step 1: Open a new Terminal and type: vi for_example.sh
+# Step 2: Press i key on the keyboard and press Ctrl+shift+v
+# Step 3: The code should be pasted, now press Esc key on keyboard
+# Step 4: Type: :wq and press Enter key on the keyboard
+# Jump to Step 4 below
+
 # Save as for_example.sh
 # Step 1: Copy this code
 # Step 2: Open new terminal, Enter on terminal: cat > for_example.sh
 # Step 3: Paste the copied code and press Ctrl+d to exit.
 # Step 4: type the following to run the code: bash for_example.sh
-# Run: bash for_example.sh
 EOF
             ;;
         11)
@@ -398,12 +415,22 @@ else
     echo "File does not exist"
 fi
 
+# Steps to run 
+# Follow this if told to write code using vi editor:
+# Step 0: Copy the code in the answer
+# Step 1: Open a new Terminal and type: vi check_file.sh
+# Step 2: Press i key on the keyboard and press Ctrl+shift+v
+# Step 3: The code should be pasted, now press Esc key on keyboard
+# Step 4: Type: :wq and press Enter key on the keyboard
+# Jump to Step 4 below
+
 # Save as check_file.sh
+
+# Follow this if vi editor is not mentioned
 # Step 1: Copy this code
 # Step 2: Open new terminal, Enter on terminal: cat > check_file.sh
 # Step 3: Paste the copied code and press Ctrl+d to exit.
 # Step 4: type the following to run the code: bash check_file.sh
-# Run: bash check_file.sh
 EOF
             ;;
         12)
@@ -429,12 +456,22 @@ else
     echo "File does not exist"
 fi
 
+# Steps to run 
+# Follow this if told to write code using vi editor:
+# Step 0: Copy the code in the answer
+# Step 1: Open a new Terminal and type: vi check_permissions.sh
+# Step 2: Press i key on the keyboard and press Ctrl+shift+v
+# Step 3: The code should be pasted, now press Esc key on keyboard
+# Step 4: Type: :wq and press Enter key on the keyboard
+# Jump to Step 4 below
+
 # Save as check_permissions.sh
+
+# Follow this if vi editor is not mentioned
 # Step 1: Copy this code
 # Step 2: Open new terminal, Enter on terminal: cat > check_permissions.sh
 # Step 3: Paste the copied code and press Ctrl+d to exit.
 # Step 4: type the following to run the code: bash check_permissions.sh
-# Run: bash check_permissions.sh
 EOF
             ;;
         13)
