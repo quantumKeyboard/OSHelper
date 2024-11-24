@@ -77,13 +77,16 @@ Terminal and Basic Commands:
 2. whoami - Print current user
    $ whoami
    
-3. login - Login as different user
-   $ login username
+3. sudo -s
+	Type: # adduser newuser
    
-4. passwd - Change password
+4. login - Login as different user
+   # login newuser
+   
+5. passwd - Change password
    $ passwd
    
-5. pwd - Print working directory
+6. pwd - Print working directory
    $ pwd
 EOF
             ;;
@@ -105,16 +108,21 @@ a) Basic Services:
    
 b) Service Management:
 1. Start service:
-   $ sudo systemctl start service_name
+   $ sudo systemctl start ufw
    
-2. Stop service:
-   $ sudo systemctl stop service_name
+2. Check status: 
+   $ sudo systemctl status ufw
    
-3. Restart service:
-   $ sudo systemctl restart service_name
+3. Stop service:
+   $ sudo systemctl stop ufw
    
 4. Check status:
-   $ sudo systemctl status service_name
+   $ sudo systemctl status ufw
+   
+5. Restart service:
+   $ sudo systemctl restart ufw
+   
+
 EOF
             ;;
         4)
@@ -126,8 +134,7 @@ Process Commands:
    $ ps aux
    
 2. wait - Wait for process to complete
-   $ sleep 10 &
-   $ wait $!
+   $ sleep 5 & wait $! && echo "Process completed" || echo "Process failed"
    
 3. exit - Exit shell or script
    $ exit
@@ -136,8 +143,8 @@ Process Commands:
    $ sleep 5
    
 5. kill - Terminate process
-   $ kill PID
-   $ killall process_name
+   $ kill 7011
+   $ killall firefox
 EOF
             ;;
         5)
@@ -149,17 +156,30 @@ File Manipulation Commands:
    $ ls -la
    
 2. rm - Remove files
-   $ rm file
-   $ rm -r directory
+   $ cat > removeFile.txt
+   $ mkdir removeDirectory
+   $ rm removeFile.txt
+   $ rm -r removeDirectory
    
 3. mv - Move/rename files
-   $ mv source destination
+   $ cat > moveToThisFile.txt
+   Press Ctrl+D
+   $ cat > moveThisFile.txt
+   Write anything in this and press Ctrl+d
+   $ mv moveThisFile.txt moveToThisFile.txt
    
 4. cp - Copy files
-   $ cp source destination
+   $ cat > copyThisFile.txt
+   Write something in this file and press Ctrl+d
+   $ cat > copyToThisFile.txt
+   Press Ctrl+d
+   $ cp copyThisFile.txt copyToThisFile.txt
    
 5. join - Join files on a common field
-   $ join file1 file2
+   $ cat > JoinFile.txt
+   Type something in this file
+   $ cat > JoinFile2.txt
+   $ join JoinFile.txt JoinFile2.txt
    
 6. split - Split file into pieces
    $ split -l 100 bigfile
