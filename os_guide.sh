@@ -177,25 +177,36 @@ File Manipulation Commands:
    
 5. join - Join files on a common field
    $ cat > JoinFile.txt
-   Type something in this file
+   Type your name in this file and press ctrl+d
    $ cat > JoinFile2.txt
+   type your name again in this file and press ctrl+d
    $ join JoinFile.txt JoinFile2.txt
    
 6. split - Split file into pieces
-   $ split -l 100 bigfile
+   $ cat > bigfile.txt
+   write something in this file
+   $ split -l 2 bigfile.txt
    
 7. cat - Concatenate and display files
-   $ cat file
-   $ cat file1 > file2
+   $ cat > file.txt
+   Write something in this file and press Ctrl+d
+   $ cat > file2.txt
+   Write something in this file and press Ctrl+d
+   $ cat file1.txt > file2.txt
    
 8. head - Show first lines
-   $ head -n 5 file
+   $ cat > headFile.txt
+   Write any 5 lines in the file and press Ctrl+d
+   $ head -n 2 headFile.txt
    
 9. tail - Show last lines
-   $ tail -n 5 file
+   $ cat > tailFile.txt
+   Write any 5 lines in the file adn press Ctrl+d
+   $ tail -n 2 tailFile.txt
    
 10. touch - Create empty file/update timestamp
-    $ touch newfile
+    $ cat > touchFile.txt and later press Ctrl+d
+    $ touch touchFile.txt
 EOF
             ;;
         6)
@@ -203,23 +214,33 @@ EOF
 File and Directory Commands with Wildcards:
 
 1. diff - Compare files
-   $ diff file1 file2
+   $ cat > file1.txt
+   Write something in this and press Ctrl+d
+   $ cat > file2.txt
+   Write something in this and press Ctrl+d
+   $ diff file1.txt file2.txt
    
 2. comm - Compare sorted files
-   $ comm file1 file2
+   $ cat > file1.txt
+   Write something in this and press Ctrl+d
+   $ cat > file2.txt
+   Write something in this and press Ctrl+d
+   $ comm file1.txt file2.txt
    
 3. pr - Format file for printing
-   $ pr file
+   $ cat > PrFile.txt
+   Write something in this and press Ctrl+d
+   $ pr PrFile.txt
    
 4. mkdir - Create directory
    $ mkdir newdir
    
 5. rmdir - Remove empty directory
-   $ rmdir dir
+   $ rmdir newdir
    
 6. cd - Change directory
-   $ cd /path
-   $ cd ..
+   $ mkdir newF
+   $ cd newF
    
 7. pwd - Print working directory
    $ pwd
@@ -228,17 +249,15 @@ File and Directory Commands with Wildcards:
    $ dir
    
 9. cmp - Compare files byte by byte
-   $ cmp file1 file2
-   
-Wildcard Usage:
-* - Match any characters
-? - Match single character
-[] - Match character class
+   $ cat > file1.txt
+   Write something in this and press Ctrl+d
+   $ cat > file2.txt
+   Write something in this and press Ctrl+d
+   $ cmp file1.txt file2.txt
 
-Examples:
-$ ls *.txt
-$ rm test?.*
-$ ls [a-z]*
+Wildcard characters: 
+$ ls file*.txt
+$ rm file*.txt
 EOF
             ;;
         7)
@@ -246,31 +265,47 @@ EOF
 Text Processing Commands:
 
 1. tr - Translate characters
-   $ tr 'a-z' 'A-Z' < file
+   $ cat > trFile.txt
+   Type something in this file and press Ctrl+d
+   $ tr 'a-z' 'A-Z' < trFile.txt
    
 2. wc - Word, line, character count
-   $ wc file
-   $ wc -l file  # lines only
+   $ cat > wcFile.txt
+   Type something in this file and press Ctrl+d   
+   $ wc wcFile.txt
+   $ wc -l file  # To calculate no of lines
    
 3. cut - Extract sections from lines
-   $ cut -d: -f1 /etc/passwd
+   $ cat > cutFile.txt
+   Type something in this file and press Ctrl+d
+   $ cut -d: -f1 cutFile.txt
    
 4. paste - Merge lines
-   $ paste file1 file2
+   $ cat > newCutFile.txt
+   Type something in this file and press Ctrl+d
+   $ paste cutFile.txt newCutFile.txt
    
 5. spell - Check spelling
-   $ spell file
+   $ cat > spellFile.txt
+   Type something in this file and press Ctrl+d
+   $ spell spellFile.txt
    
 6. sort - Sort lines
-   $ sort file
-   $ sort -n file  # numeric sort
+   $ cat > sortFile.txt
+   Type something in this file and press Ctrl+d
+   $ sort sortFile.txt
+   $ sort -n sortFile.txt  # numeric sort
    
-7. grep - Search text
-   $ grep pattern file
-   $ grep -i pattern file  # case-insensitive
+7. grep - Search text 
+   $ cat > grepFile.txt
+   Type Hello in this file
+   $ grep Hello grepFile.txt
+   $ grep -i HELLO grepFile.txt  # case-insensitive
    
 8. more - Page through text
-   $ more file
+   $ cat > moreFile.txt
+   Type something in this file and press Ctrl+d
+   $ more moreFile.txt
 EOF
             ;;
         8)
@@ -278,37 +313,23 @@ EOF
 Vi Editor Commands:
 
 1. Opening:
-   $ vi filename
+   $ vi newFile
 
 2. Mode Commands:
-   i - Insert mode
-   Esc - Command mode
+   Press i to start typing in the file
+   or
+   Press Esc button to go to command mode
    
 3. Saving and Quitting:
-   :w - Save
-   :q - Quit
-   :wq - Save and quit
-   :q! - Force quit without saving
+   Type :wq to save and quit the file
    
-4. Navigation:
-   h - Left
-   j - Down
-   k - Up
-   l - Right
-   w - Next word
-   b - Previous word
+4. Editing:
+   Type something in the file, adn select it using mouse.
+   Now press Esc key on keyboard and then press yy (y 2 times)
+   Now press p on your keyboard
+   This is copy paste in vi editor
    
-5. Editing:
-   dd - Delete line
-   yy - Copy line
-   p - Paste
-   u - Undo
-   
-6. Search:
-   /pattern - Search forward
-   ?pattern - Search backward
-   n - Next occurrence
-   N - Previous occurrence
+
 EOF
             ;;
         9)
