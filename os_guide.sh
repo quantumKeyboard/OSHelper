@@ -309,6 +309,10 @@ else
 fi
 
 # Save as if_example.sh
+# Step 1: Copy this code
+# Step 2: Open new terminal, Enter on terminal: cat > if_example.sh
+# Step 3: Paste the copied code and press Ctrl+d to exit.
+# Step 4: type the following to run the code: bash if_example.sh
 # Run: bash if_example.sh
 EOF
             ;;
@@ -331,6 +335,10 @@ do
 done
 
 # Save as for_example.sh
+# Step 1: Copy this code
+# Step 2: Open new terminal, Enter on terminal: cat > for_example.sh
+# Step 3: Paste the copied code and press Ctrl+d to exit.
+# Step 4: type the following to run the code: bash for_example.sh
 # Run: bash for_example.sh
 EOF
             ;;
@@ -350,6 +358,10 @@ else
 fi
 
 # Save as check_file.sh
+# Step 1: Copy this code
+# Step 2: Open new terminal, Enter on terminal: cat > check_file.sh
+# Step 3: Paste the copied code and press Ctrl+d to exit.
+# Step 4: type the following to run the code: bash check_file.sh
 # Run: bash check_file.sh
 EOF
             ;;
@@ -377,6 +389,10 @@ else
 fi
 
 # Save as check_permissions.sh
+# Step 1: Copy this code
+# Step 2: Open new terminal, Enter on terminal: cat > check_permissions.sh
+# Step 3: Paste the copied code and press Ctrl+d to exit.
+# Step 4: type the following to run the code: bash check_permissions.sh
 # Run: bash check_permissions.sh
 EOF
             ;;
@@ -439,8 +455,14 @@ int main() {
 }
 
 // Save as fcfs.c
-// Compile: gcc fcfs.c -o fcfs
-// Run: ./fcfs
+// Step 1: Copy this code
+// Step 2: Open new terminal, Enter on terminal: cat > fcfs.c
+// Step 3: Paste the copied code and press Ctrl+d to exit.
+// Step 4: type: sudo apt install gcc
+// Step 5: gcc fcfs.c -o fcfs
+// Step 6: ./fcfs
+// Step 7: Enter any random number as number of processes
+// Step 8: Enter random time for each process
 EOF
             ;;
         14)
@@ -449,69 +471,74 @@ C Program for FIFO Page Replacement:
 
 #include <stdio.h>
 
-#define MAX_FRAMES 10
-
-int isPagePresent(int page, int frames[], int n) {
-    for (int i = 0; i < n; i++) {
-        if (frames[i] == page)
-            return 1;
-    }
-    return 0;
-}
-
-void printFrames(int frames[], int n) {
-    for (int i = 0; i < n; i++) {
-        if (frames[i] == -1)
-            printf("- ");
-        else
-            printf("%d ", frames[i]);
-    }
-    printf("\n");
-}
-
 int main() {
-    int pages[50], frames[MAX_FRAMES];
-    int n, num_frames, page_faults = 0;
-    int current = 0;
+    int i, n, frame[10], no, k, count = 0, j = 0;
+    int a[50];  
+    int flag;   
     
-    printf("Enter number of frames: ");
-    scanf("%d", &num_frames);
-    
-    printf("Enter number of pages: ");
+    // Get number of pages
+    printf("Enter Number of pages:\n");
     scanf("%d", &n);
     
-    printf("Enter page reference string: ");
-    for (int i = 0; i < n; i++)
-        scanf("%d", &pages[i]);
-    
-    // Initialize frames
-    for (int i = 0; i < num_frames; i++)
-        frames[i] = -1;
-    
-    printf("\nPage Replacement Process:\n");
-    for (int i = 0; i < n; i++) {
-        printf("\nReference: %d\n", pages[i]);
-        
-        if (!isPagePresent(pages[i], frames, num_frames)) {
-            frames[current] = pages[i];
-            current = (current + 1) % num_frames;
-            page_faults++;
-            printf("Page Fault! ");
-        }
-        else
-            printf("No Page Fault ");
-        
-        printFrames(frames, num_frames);
+    // Get page numbers
+    printf("Enter the page numbers:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
     }
     
-    printf("\nTotal Page Faults: %d\n", page_faults);
+    // Get number of frames
+    printf("Enter number of frames:\n");
+    scanf("%d", &no);
     
+    // Initialize frames to -1
+    for(i = 0; i < no; i++) {
+        frame[i] = -1;
+    }
+    
+    // Page replacement logic
+    for(i = 0; i < n; i++) {
+        printf("\n%d: ", a[i]);
+        flag = 0;
+        
+        // Check if page already exists in frame
+        for(k = 0; k < no; k++) {
+            if(frame[k] == a[i]) {
+                flag = 1;
+                break;
+            }
+        }
+        
+        // If page is not in frame, add it
+        if(flag == 0) {
+            frame[j] = a[i];
+            j = (j + 1) % no;
+            count++;
+        }
+        
+        // Print current state of frames
+        for(k = 0; k < no; k++) {
+            if(frame[k] != -1)
+                printf("%d ", frame[k]);
+            else
+                printf("- ");
+        }
+    }
+    
+    printf("\nTotal Page Faults: %d\n", count);
     return 0;
 }
 
 // Save as fifo_page.c
-// Compile: gcc fifo_page.c -o fifo_page
-// Run: ./fifo_page
+// Step 1: Copy this code
+// Step 2: Open new terminal, Enter on terminal: cat > fifo_page.c
+// Step 3: Paste the copied code and press Ctrl+d to exit.
+// Step 4: Type: sudo apt install gcc
+// Step 5: Type: gcc fifo_page.c -o fifo_page
+// Step 7: Enter number of pages as 20
+// Step 8: Enter total 20 Page numbers randomly
+// Step 9: Enter Number of frames as 3 
+// Step 6: Type: ./fifo_page
+
 EOF
             ;;
         *)
